@@ -10,7 +10,7 @@ fi
 mkdir -p build
 rm -rf build/dashboard.json
 
-jsonnet --jpath $(pwd)/vendor $1 > build/dashboard.json
+jsonnet --jpath "$(pwd)/vendor" "$1" > build/dashboard.json
 
 payload="{\"dashboard\": $(jq . build/dashboard.json), \"overwrite\": true}"
 
