@@ -1,4 +1,10 @@
-## Run Grafana instance
+# Grafana Dashboards with Jsonnet
+
+The repository contains dashboard examples written in Jsonnet.
+
+# Run Grafana instance
+
+First, you need a running instance of Grafana(see below)
 
 Run the Grafana Docker container
 Start the Docker container by binding Grafana to external port 3000.
@@ -12,7 +18,7 @@ Try it out, default admin user credentials are admin/admin.
 
 Further documentation can be found at http://docs.grafana.org/installation/docker/.
 
-## Run Grafana container with persistent storage (recommended)
+# Run Grafana container with persistent storage (recommended)
 ```bash
 # Remove if exists
 docker rm grafana
@@ -38,3 +44,12 @@ Use admin/admin as username/password while authenticating.
 After the login, the UI will ask for a new password. Please, use `password` value. It is used inside the scripts.
 
 
+# Demo Time
+
+If you have a running instance of Grafana, just run a command
+
+```shell
+./bin/deploy-dashboard.sh dashboards/dashboard-templates.jsonnet 
+```
+
+You can select any dashboard example from the directory `./dashboards`
